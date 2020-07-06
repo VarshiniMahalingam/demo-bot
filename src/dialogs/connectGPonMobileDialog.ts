@@ -1,6 +1,5 @@
 import {ComponentDialog,ChoicePrompt,ChoiceFactory,ConfirmPrompt,DialogTurnResult,TextPrompt,WaterfallDialog} from 'botbuilder-dialogs';
 import { InputHints, MessageFactory, CardFactory } from 'botbuilder';
-import { GPDetails } from './GPDetails';
 import { LiveAgentDialog } from './liveAgentDialog';
 import { FeedbackDialog } from './feedbackDialog';
 
@@ -110,7 +109,7 @@ export class ConnectGPonMobileDialog extends ComponentDialog {
         cardPrompt.attachments = [createincidentCard];
         return await stepContext.prompt(TEXT_PROMPT, cardPrompt);
             }
-            else{
+             else{
                 return await stepContext.endDialog();
                 }
        

@@ -1,8 +1,8 @@
 import {ComponentDialog,ChoicePrompt,ChoiceFactory,ConfirmPrompt,DialogTurnResult,TextPrompt,WaterfallDialog} from 'botbuilder-dialogs';
 import { InputHints, MessageFactory, CardFactory } from 'botbuilder';
-import { GPDetails } from './gpDetails';
 import { LiveAgentDialog } from './liveAgentDialog';
 import { FeedbackDialog } from './feedbackDialog';
+
 
 const CHOICE_PROMPT = 'choicePrompt';
 const CONFIRM_PROMPT = 'confirmPrompt';
@@ -10,7 +10,6 @@ const TEXT_PROMPT = 'textPrompt';
 const WATERFALL_DIALOG = 'waterfallDialog';
 const LIVE_AGENT_DIALOG = 'liveAgentDialog';
 const FEEDBACK_DIALOG = 'feedbackDialog';
-
 const CreateincidentCard = require('../../resources/createincidentCard.json');
 
 export class InstallGPDialog extends ComponentDialog {
@@ -22,7 +21,7 @@ export class InstallGPDialog extends ComponentDialog {
             .addDialog(new ChoicePrompt(CHOICE_PROMPT))
             .addDialog(new LiveAgentDialog(LIVE_AGENT_DIALOG))
             .addDialog(new FeedbackDialog(FEEDBACK_DIALOG))
-            .addDialog(new WaterfallDialog(WATERFALL_DIALOG, [
+           .addDialog(new WaterfallDialog(WATERFALL_DIALOG, [
                 this.firstStep.bind(this),
                 this.secondStep.bind(this),
                 this.thirdStep.bind(this),
@@ -91,11 +90,12 @@ export class InstallGPDialog extends ComponentDialog {
             console.log("HELLO2");
             return await stepContext.prompt(CHOICE_PROMPT, {
             prompt: 'Select one of the options below:',
-            choices: ChoiceFactory.toChoices(['Create an incident', 'Need to install Global protect for non amway laptops'])
+            choices: ChoiceFactory.toChoices(['Create an incident', 'Need to connect Global protect on mobile and tablet'])
         });
     }
         else if(stepContext.result === false){
                 return await stepContext.beginDialog(FEEDBACK_DIALOG, { gpDetails } );
+                return await stepContext.endDialog(); 
                      }
                      else{
                         return await stepContext.endDialog(); 

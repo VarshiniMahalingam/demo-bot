@@ -35,7 +35,7 @@ async finalStep (stepContext){
     if(stepContext.result.index == "0" || stepContext.result.index == "1"){
         console.log("VARSHINI SUCCESS");
         const messageText = 'Thanks for the feedback and for using CSD Bot!';
-        const msg = MessageFactory.text(messageText, messageText, InputHints.ExpectingInput);
+        const msg = MessageFactory.text(messageText, null, InputHints.IgnoringInput);
         return await stepContext.prompt(TEXT_PROMPT, { prompt: msg });
     }
     else {
@@ -43,6 +43,6 @@ async finalStep (stepContext){
         const msg = MessageFactory.text(messageText, messageText, InputHints.ExpectingInput);
         return await stepContext.prompt(TEXT_PROMPT, { prompt: msg });
     }
-    return await stepContext.endDialog();
+return await stepContext.endDialog();
  }
 }

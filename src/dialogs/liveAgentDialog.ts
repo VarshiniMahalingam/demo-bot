@@ -19,6 +19,7 @@ export class LiveAgentDialog extends ComponentDialog {
         .addDialog(new FeedbackDialog(FEEDBACK_DIALOG))
         .addDialog(new WaterfallDialog(WATERFALL_DIALOG, [
         this.initialStep.bind(this),
+        this.actualStep.bind(this),
         this.finalStep.bind(this)
     ]));
 
@@ -32,8 +33,8 @@ async initialStep(stepContext){
             return await stepContext.prompt(CONFIRM_PROMPT, { prompt: msg });
 }
 
-async finalStep (stepContext){
-    const feedbackDetails = {} ;
+async actualStep (stepContext){
+   // const feedbackDetails = {} ;
     if(stepContext.result === true){
                 console.log("VARSHINI SUCCESS");
      const messageText = 'You are connected to live agent.';
@@ -45,8 +46,13 @@ async finalStep (stepContext){
               
      }
      else {
-            return await stepContext.beginDialog(FEEDBACK_DIALOG, { feedbackDetails } );
+        console.log("here2")
+           return await stepContext.next();
              }
+     }
+ async finalStep (stepContext){
+    const feedbackDetails = {} ;
+    return await stepContext.beginDialog(FEEDBACK_DIALOG, { feedbackDetails } );
     return await stepContext.endDialog();
  }
 }

@@ -5,7 +5,6 @@ import { ComponentDialog,DialogSet,DialogState,DialogTurnResult,DialogTurnStatus
 import { InstallGPDialog } from './installGlobalProtectDialog';
 import { LuiRecognizer } from './luisRecognizer';
 import { ConnectGPonMobileDialog } from './connectGPonMobileDialog';
-import { GPDetails } from './GPDetails';
 
 const MAIN_WATERFALL_DIALOG = 'mainWaterfallDialog';
 //const TEXT_PROMPT = 'textPrompt';
@@ -74,7 +73,7 @@ private async actStep(stepContext: WaterfallStepContext): Promise<DialogTurnResu
             console.log("HIHIHIHI");
             return await stepContext.beginDialog('connectGPonMobileDialog', gpDetails );
             console.log("HIHIHI");
-            console.log("HIHIHIHI");
+            
            
         case 'install_Global_protect':
             return await stepContext.beginDialog('installGlobalProtectDialog', gpDetails );
@@ -89,11 +88,11 @@ private async actStep(stepContext: WaterfallStepContext): Promise<DialogTurnResu
 
    
 private async finalStep(stepContext) {
-        if (!stepContext.result) {
+       // if (!stepContext.result) {
             return await stepContext.context.sendActivity('Thank you for contacting CSD Bot. Have a great day.')
-        }
-        else {
-            return await stepContext.replaceDialog(this.initialDialogId, { restartMsg: 'What else can I do for you?' });
-        }
+       //}
+      //  else {
+            //return await stepContext.replaceDialog(this.initialDialogId, { restartMsg: 'What else can I do for you?' });
+      //  }
 }
 }
