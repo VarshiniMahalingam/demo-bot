@@ -1,0 +1,31 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "spacing": "medium",
+            "size": "default",
+            "weight": "bolder",
+            "text": "Click here to be connected to a live agent via Chat.",
+            "wrap": true,
+            "maxLines": 0
+          },
+          {
+            "type": "TextBlock",
+            "size": "default",
+            "isSubtle": true,
+            "text": "Note: Live Agent availability during UAT is limited between 8AM-5PM CST, Mon-Fri.If you prefer to contact Service Desk by phone, Contact numbers are here by your Region and Country.",
+            "wrap": true,
+            "maxLines": 0
+          }
+        ],
+        "actions": [
+            {
+              "type": "Action.OpenUrl",
+              "title": "Click here",
+              "url": "https://teams.microsoft.com/l/chat/0/0?users=ashmeet.singh@tcs.com"
+            }
+        ]
+    }

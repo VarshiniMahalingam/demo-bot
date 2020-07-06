@@ -1,0 +1,38 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+
+            "type": "FactSet",
+                    "spacing": "large",
+                    "facts": [
+                        {
+                            "title": "Incident:",
+                            "value": "INC123456"
+                        },
+
+                        {
+                            "title": "Issue Description:",
+                            "value": "**Matt Hidinger**  matt@contoso.com"
+                        },
+                      
+                        {
+                            "title": "Assigned Group:",
+                            "value": "Service Desk"
+                        },
+                      
+                        {
+                            "title": "Priority:",
+                            "value": "Medium"
+                        },
+                      
+                        {
+                            "title": "Date",
+                            "value": "**Matt Hidinger**  matt@contoso.com"
+                        }
+                    ]
+                    }
+        ]
+    }

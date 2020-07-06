@@ -1,0 +1,56 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "TextBlock",
+        "spacing": "medium",
+        "size": "default",
+        "weight": "bolder",
+        "text": "How would you rate the service you just received from CSD Bot?",
+        "wrap": true,
+        "maxLines": 0
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "isSubtle": true,
+        "text": "GREAT",
+        "wrap": true,
+        "maxLines": 0
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "isSubtle": true,
+        "text": "GOOD",
+        "wrap": true,
+        "maxLines": 0
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "isSubtle": true,
+        "text": "AVERAGE",
+        "wrap": true,
+        "maxLines": 0
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "isSubtle": true,
+        "text": "POOR",
+        "wrap": true,
+        "maxLines": 0
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "isSubtle": true,
+        "text": "NOT HELPFUL",
+        "wrap": true,
+        "maxLines": 0
+      }
+    ]
+}
