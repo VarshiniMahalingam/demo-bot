@@ -19,14 +19,11 @@ import { LuisApplication } from 'botbuilder-ai';
 import { DialogAndWelcomeBot } from './bots/dialogAndWelcomeBot';
 import { MainDialog } from './dialogs/mainDialog';
 
-// The bot's booking dialog
-//import { BookingDialog } from './dialogs/bookingDialog';
 import { InstallGPDialog } from './dialogs/installGlobalProtectDialog';
 const INSTALLGP_DIALOG = 'installGlobalProtectDialog';
-//const BOOKING_DIALOG = 'bookingDialog';
+
 
 // The helper-class recognizer that calls LUIS
-//import { FlightBookingRecognizer } from './dialogs/flightBookingRecognizer';
 import { LuiRecognizer } from './dialogs/luisRecognizer';
 import { ConnectGPonMobileDialog } from './dialogs/connectGPonMobileDialog';
 const CONNECTGPONMOBILE_DIALOG = 'connectGPonMobileDialog';
@@ -83,7 +80,6 @@ const luisConfig: LuisApplication = { applicationId: LuisAppId, endpointKey: Lui
 luisRecognizer = new LuiRecognizer(luisConfig);
 
 // Create the main dialog.
-//const bookingDialog = new BookingDialog(BOOKING_DIALOG);
 const installGPDialog = new InstallGPDialog(INSTALLGP_DIALOG);
 const connectGPonMobileDialog = new ConnectGPonMobileDialog(CONNECTGPONMOBILE_DIALOG);
 

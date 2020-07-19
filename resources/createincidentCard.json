@@ -15,7 +15,7 @@
 
                         {
                             "title": "Issue Description:",
-                            "value": "**Matt Hidinger**  matt@contoso.com"
+                            "value": "Create Incident to resolve the issue"
                         },
                       
                         {
@@ -29,10 +29,12 @@
                         },
                       
                         {
-                            "title": "Date",
-                            "value": "**Matt Hidinger**  matt@contoso.com"
+                            "title": "Date:",
+                            "value": "09-07-2020"
                         }
                     ]
-                    }
+                }
+              
+                    
         ]
     }

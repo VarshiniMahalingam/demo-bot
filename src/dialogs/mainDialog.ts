@@ -89,7 +89,7 @@ private async actStep(stepContext: WaterfallStepContext): Promise<DialogTurnResu
    
 private async finalStep(stepContext) {
        // if (!stepContext.result) {
-            return await stepContext.context.sendActivity('Thank you for contacting CSD Bot. Have a great day.')
+            return await stepContext.context.sendActivity('Thank you for contacting CSD Bot. Have a great day :)')
        //}
       //  else {
             //return await stepContext.replaceDialog(this.initialDialogId, { restartMsg: 'What else can I do for you?' });

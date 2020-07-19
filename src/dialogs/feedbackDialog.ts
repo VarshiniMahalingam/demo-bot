@@ -27,14 +27,14 @@ async initialStep(stepContext){
     console.log("VARSHINI!!!!!!");
        return await stepContext.prompt(CHOICE_PROMPT, {
         prompt: 'Please take a minute to share your experience with us to serve you better.How would you rate the service you just received from CSD Bot?',
-        choices: ChoiceFactory.toChoices(['GREAT', 'GOOD','AVERAGE','POOR','NOT HELPFUL']),
+        choices: ChoiceFactory.toChoices(['GREAT ☆☆☆☆☆', 'GOOD ☆☆☆☆','AVERAGE ☆☆☆','POOR ☆☆','NOT HELPFUL ☆']),
     });
 }
 
 async finalStep (stepContext){
     if(stepContext.result.index == "0" || stepContext.result.index == "1"){
         console.log("VARSHINI SUCCESS");
-        const messageText = 'Thanks for the feedback and for using CSD Bot!';
+        const messageText = 'Thanks for your feedback !';
         const msg = MessageFactory.text(messageText, null, InputHints.IgnoringInput);
         return await stepContext.prompt(TEXT_PROMPT, { prompt: msg });
     }
